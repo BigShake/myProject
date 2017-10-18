@@ -1,0 +1,21 @@
+{
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": "html"
+    },
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html"
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "vue"
+    ],
+    "eslint.workingDirectories": [
+        "/src"
+    ],
+    "files.eol": "\n",
+    "vetur.validation.template": false
+}

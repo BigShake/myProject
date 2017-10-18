@@ -1,0 +1,434 @@
+@import "difinitions.less";
+@import "~iview/src/styles/index.less";
+
+body * {
+    .font-s();
+}
+
+.default-theme {
+    color: @c-text-font;
+
+    .ivu-radio-checked .ivu-radio-inner {
+        border-color: @c-main;
+
+        &::after {
+            background-color: @c-main;
+        }
+    }
+
+    .title-font {
+        font-size: 16px;
+        font-weight: bolder;
+    }
+
+    .main-color-block {
+        background-color: @c-main;
+    }
+
+    .title-height-block {
+        height: @l-title-height;
+    }
+
+    .title-content-block {
+        padding: 10px 20px;
+        height: 40px;
+        box-shadow: 0 2px 5px @c-block-border;
+    }
+
+    .title-font {
+        color: @c-title-font;
+    }
+
+    .menu-user-font {
+        color: #333;
+    }
+
+    .menu-user-role-font {
+        color: #999;
+    }
+
+    .menu-font {
+        color: #737373;
+    }
+
+    //菜单
+    //混合
+    .menu-color () {
+        color: @c-nav-active-font;
+        border-color: @c-nav-active-font;
+    }
+
+    .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu:hover {
+        .menu-color();
+    }
+    
+    .ivu-menu-light.ivu-menu-horizontal {
+        &.hover {
+            .menu-color();
+        }
+        //每一项
+        .ivu-menu-submenu {
+            &.hover {
+                .menu-color();
+            }
+        }
+        //处于当前菜单
+        .ivu-menu-submenu.ivu-menu-item-active {
+            .menu-color();
+        }
+        //菜单展开时
+        .ivu-menu-submenu.ivu-menu-opened {
+            .menu-color();
+
+            &.hover {
+                .menu-color();
+            }
+        }
+    }
+  
+    .ivu-menu-light.ivu-menu-horizontal .ivu-menu-item-active:not(.ivu-menu-submenu) {
+        background-color: @c-menu-bg;
+        color: @c-nav-active-font;
+        // border-right: 0;
+    }
+
+    .ivu-menu-vertical .ivu-menu-submenu-title-icon {
+        transform: rotate(-90deg);
+    }
+
+    .setting-menu-block {
+        border-top: 1px solid @c-block-border;
+        margin-top: 10px;
+        padding-top: 10px;
+        background-color: #fff;
+    }
+
+    .ivu-menu-vertical .ivu-menu-submenu-title {
+        background-color: #fff;
+    }
+
+    .ivu-icon {
+        font-size: 16px;
+    }
+
+    //输入框
+    .ivu-input {
+        height: 30px;
+        // width: auto;
+        border-color: @input-border;
+
+        &:hover {
+            border-color: @input-border;
+        }
+        
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    //按钮样式
+    //  按钮规范一
+    .ivu-btn {
+        background-color: @c-main;
+        font-size: 14px;
+        color: #fff;
+        height: 30px;
+        min-width: 100px;
+        box-sizing: border-box;
+        border-color: @c-main;
+        line-height: 18px;
+        
+        &:hover {
+            background-color: #29a8b8;
+            border-color: #29a8b8;
+            color: #fff;
+        }
+
+        &:active {
+            background-color: #31a6a5;
+            border-color: #31a6a5;
+            color: #fff;
+        }
+
+        &:disabled {
+            background-color: @c-btn-cancel;
+            border-color: @c-btn-cancel;
+            color: #fff;
+        }
+        //  按钮规范二 (灰)
+        &.ivu-btn-dashed {
+            background-color: #b4b4b4;
+            border-color: #b4b4b4;
+
+            &:hover {
+                background-color: #8e8a86;
+            }
+
+            &:active {
+                background-color: #585655;
+            }
+
+            &:disabled {
+                background-color: @c-btn-cancel;
+            }
+        }
+        //  按钮规范二
+        &.ivu-btn-ghost {
+            background-color: #fff;
+            border-color: @c-main;
+            color: @c-main;
+
+            &:hover {
+                background-color: @c-main;
+                color: #fff;
+            }
+
+            &:active {
+                background-color: @c-main;
+                color: #fff;
+            }
+
+            &:disabled {
+                border-color: @c-btn-cancel;
+                background-color: #fff;
+                color: @c-btn-cancel;
+            }
+        }
+
+        &.ivu-btn-info {
+            background-color: #fff;
+            border-color: @c-main;
+            border-style: dashed;
+            color: @c-main;
+
+            &:hover {
+                background-color: @c-main;
+                color: #fff;
+            }
+
+            &:active {
+                background-color: @c-main;
+                color: #fff;
+            }
+
+            &:disabled {
+                border-color: @c-btn-cancel;
+                background-color: #fff;
+                color: @c-btn-cancel;
+            }
+        }
+
+        // &.ivu-btn-info {
+        //     background-color: #fff;
+        //     border-color: #c8c8c8;
+        //     color: #6d768c;
+        //     font-size: 12px;
+
+        //     .ivu-icon {
+        //         color: @c-main;
+        //     }
+
+        //     &:hover,
+        //     &:active {
+        //         border-color: @c-main;
+        //         color: @c-main;
+        //     }
+
+        //     &:disabled {
+        //         border-color: @c-btn-cancel;
+        //         color: @c-btn-cancel;
+
+        //         .icon-font {
+        //             color: @c-btn-cancel;
+        //         }
+        //     }
+        // }
+
+        &.ivu-btn-info,
+        &.ivu-btn-primary {
+            min-width: initial;
+            padding: 0 10px;
+            font-size: 0;
+
+            .ivu-icon {
+                margin-right: 8px;
+                font-size: 20px;
+                vertical-align: middle;
+            }
+
+            span {
+                margin: 0;
+                font-size: 12px;
+                vertical-align: middle;
+            }
+
+            line-height: 30px;
+        }
+
+        &.ivu-btn-text {
+            min-width: initial;
+            color: @c-main;
+            background-color: transparent;
+            border: 0;
+            padding: 0 5px;
+
+            &:hover {
+                color: #29a8b8;
+            }
+
+            &:active {
+                color: #31a6a5;
+            }
+        }
+
+        &.ivu-btn-icon-only {
+            height: 25px;
+            width: 25px;
+            min-width: initial;
+        }
+    }
+
+    //confirm 样式
+    .ivu-modal-body {
+        // padding: 0;
+
+        .ivu-modal-confirm {
+            // padding: 0;
+        
+            //头部
+            // .ivu-modal-confirm-head {
+            //     // background-color: #46c8bc;
+
+            //     //标题
+            //     // .ivu-modal-confirm-head-title {
+            //     //     // font-weight: normal;
+            //     // }
+            // }
+            //内容
+            .ivu-modal-confirm-body {
+                //图标
+                .ivu-modal-confirm-body-icon-confirm {
+                    display: none;
+                }
+            }
+            //footer
+            .ivu-modal-confirm-footer {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // margin-bottom: 20px; 
+            }
+        }
+    }
+   
+
+    //表格样式
+    .ivu-date-picker,
+    .ivu-modal-confirm {
+        .ivu-btn {
+            min-width: initial;
+            background-color: #fff;
+            color: @c-main;
+            padding: 0 10px;
+            font-size: 14px;
+
+            &:hover {
+                background-color: #29a8b8;
+                color: #fff;
+            }
+
+            &:active {
+                background-color: #29a8b8;
+                color: #fff;
+            }
+
+            &:disabled {
+                border-color: @c-btn-cancel;
+                background-color: #fff;
+                color: @c-btn-cancel;
+            }
+
+            &.ivu-btn-primary {
+                background-color: @c-main;
+                color: #fff;
+                border-color: @c-main;
+                line-height: 18px;
+
+                span {
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    background-color: #29a8b8;
+                    border-color: #29a8b8;
+                    color: #fff;
+                }
+
+                &:active {
+                    background-color: #31a6a5;
+                    border-color: #31a6a5;
+                    color: #fff;
+                }
+
+                &:disabled {
+                    background-color: @c-btn-cancel;
+                    border-color: @c-btn-cancel;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .ivu-table-border th {
+        border-right: initial;
+    }
+
+    .ivu-table th {
+        background-color: #fff;
+    }
+
+    .ivu-table td,
+    .ivu-table th {
+        height: 50px;
+    }
+
+    .ivu-table-tbody .ivu-table-row:nth-child(2n+1) {
+        background-color: #f7f9fb;
+    }
+
+    .ivu-checkbox-inner {
+        height: 16px;
+        width: 16px;
+    }
+
+    .default-left-block {
+        margin-left: 20px;
+    }
+
+    .default-right-block {
+        margin-right: 20px;
+    }
+
+    //下拉选择框
+    .ivu-select {
+        .ivu-select-selection {
+            border-color: @input-border;
+
+            &.hover {
+                border-color: @input-border;
+            }
+        }
+
+        .ivu-select-dropdown {
+            .ivu-select-dropdown-list {
+                .ivu-select-item-selected {
+                    background-color: @c-main;
+                    
+                    &.hover {
+                        border-color: @input-border;
+                    }
+                }
+            }
+        }
+    }
+}
